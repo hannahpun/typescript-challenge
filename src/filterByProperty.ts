@@ -10,12 +10,16 @@
  * @param value - 要過濾的屬性值
  * @returns - 回傳過濾後的陣列
  */
-export function filterByProperty(){
-    // 請在此處寫下你的程式碼
+export function filterByProperty<T, K extends keyof T>(
+  lists: T[],
+  prop: K,
+  val: T[K]
+) {
+  // 請在此處寫下你的程式碼
+  return lists.filter((list) => list[prop] === val);
 }
-
 
 // 寫法推薦
 // export function filterByProperty<T, K extends keyof T>(array: T[], property: K, value: T[K]): T[] {
-    
+
 // }

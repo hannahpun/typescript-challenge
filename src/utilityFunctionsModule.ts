@@ -8,7 +8,19 @@
  * @returns - 回傳一個字串，表示格式化後的日期
  */
 export function formatDate(date: Date): string {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+  const objectDate = new Date(date);
+
+  let day = objectDate.toLocaleDateString("en-GB", {
+    day: "2-digit",
+  });
+  let month = objectDate.toLocaleDateString("en-GB", {
+    month: "2-digit",
+  });
+  let year = objectDate.toLocaleDateString("en-GB", {
+    year: "numeric",
+  });
+  return `${year}-${month}-${day}`;
 }
 
 /**
@@ -21,5 +33,6 @@ export function formatDate(date: Date): string {
  * @returns - 回傳一個數字，表示四捨五入後的結果
  */
 export function roundNumber(num: number): number {
-    // 請在此處寫下你的程式碼
+  // 請在此處寫下你的程式碼
+  return Math.round(num);
 }
